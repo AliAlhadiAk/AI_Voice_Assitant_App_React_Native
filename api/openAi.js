@@ -37,17 +37,17 @@ export const apiCall = async (prompt, messages)=>{
         return Promise.resolve({success: false, msg: err.message});
     }
 
-    // // Logic 2 : sometimes chatgpt does not understand the art messages but thats fine, you can use this approach :)
+   
 
-    // prompt = prompt.toLowerCase();
-    // let isArt = prompt.includes('image') || prompt.includes('sketch') || prompt.includes('art') || prompt.includes('picture') || prompt.includes('drawing');
-    // if(isArt){
-    //     console.log('dalle api call');
-    //     return dalleApiCall(prompt, messages)
-    // }else{
-    //     console.log('chatgpt api call')
-    //     return chatgptApiCall(prompt, messages);
-    // }
+     prompt = prompt.toLowerCase();
+     let isArt = prompt.includes('image') || prompt.includes('sketch') || prompt.includes('art') || prompt.includes('picture') || prompt.includes('drawing');
+     if(isArt){
+         console.log('dalle api call');
+         return dalleApiCall(prompt, messages)
+     }else{
+         console.log('chatgpt api call')
+        return chatgptApiCall(prompt, messages);
+     }
     
 }
 
